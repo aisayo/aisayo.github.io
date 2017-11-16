@@ -1,14 +1,14 @@
 ---
 layout: post
 title:      "Oh, Sinatra"
-date:       2017-10-20 15:49:42 +0000
+date:       2017-10-20 11:49:43 -0400
 permalink:  oh_sinatra
 ---
 
 
 I just finished the Sinatra project last night and all I can say is Sinatra has definitely been an interesting category, in a good way. Starting Ruby was tough for me, my confidence levels in my absorbance of the material was at an all time low and I even began questioning if this is for me. And then comes Sinatra. 
 
-Ruby had been such a tough ride that I was afraid of Sinatra, I was afraid the further I went into the curriculum, the more lost I would get. But that just was not the case. I enjoyed Sinatra a lot and it was a game changer for me. It taught me that I really do enjoy the design and building part of developing. It became therapeutic in the most odd way. I found myself losing my days to coding, waking up early and heading to bed late. All just to solve one more puzzle piece. I feel as though that is why I have become so fond of coding now. I am a huge puzzle geek. I spend my leiusure days building puzzles and now I have a never ending puzzle as a career. How fun! 
+Ruby had been such a tough ride that I was afraid of Sinatra, I was afraid the further I went into the curriculum, the more lost I would get. But that just was not the case. I enjoyed Sinatra a lot and it was a game changer for me. It taught me that I really do enjoy the design and building part of developing.  
 
 The one thing I definitely want to dabble in a bit more in detail is SQL. I feel as though being very knowledgable in SQL and database structing and retrieval is vital in todays day and age with so much hacking occuring. I even foresee it as being a new hot career trend. 
 
