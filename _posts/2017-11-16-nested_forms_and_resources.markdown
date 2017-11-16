@@ -12,7 +12,7 @@ For my project, I created an application that allows a user to sign up or login,
 
 Lets first start with nested resources. According to the Ruby on Rails guides, nested resources are a hierarchy of routes that capture a parent and child model role. In the instance of a book review, we have two separate objects: a Book and a Review. The Review belongs to the Book, and the Book has many reviews. In a nested resource route, this would be built out like so: 
 
-resources :books do
+**resources :books do
     resources :reviews
   end
 	
@@ -27,7 +27,7 @@ The indentation here shows the relationship between the parent and child. You ca
 					 
 	Now that are routes are defined, a user can go to the book page, add a review and the association and relationship will be highlighted via the nested resource. Showing that the new review is for the book with id of 1. Like so: 
 	
-	http://localhost:3000/books/1/reviews/new
+	**http://localhost:3000/books/1/reviews/new
 	
 	We then go to our controller and define our actions:
 	
