@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Nested Forms and Resources"
-date:       2017-11-16 17:51:00 +0000
+date:       2017-11-16 12:51:01 -0500
 permalink:  nested_forms_and_resources
 ---
 
@@ -16,8 +16,8 @@ resources :books do
     resources :reviews
   end
 	
-	
-	The indentation here shows the relationship between the parent and child. You can then access the routes that are provided to you by this nested resource via rake routes and you will find similarly the CRUD action routes are also built out, and the controller#action still depends on the Review controller, using rails magic of assumption and opinion that although Book is the parent, we are still attemping to build Reviews for the parent object. FYI, You can filter your routes by using the [only:] syntax in case there are any routes that are of no use to you. This provides a cleaner tree of routes and gets rid of anything unnecessary. 
+
+The indentation here shows the relationship between the parent and child. You can then access the routes that are provided to you by this nested resource via rake routes and you will find similarly the CRUD action routes are also built out, and the controller#action still depends on the Review controller, using rails magic of assumption and opinion that although Book is the parent, we are still attemping to build Reviews for the parent object. FYI, You can filter your routes by using the [only:] syntax in case there are any routes that are of no use to you. This provides a cleaner tree of routes and gets rid of anything unnecessary. 
 	
 **	book_reviews GET    /books/:book_id/reviews(.:format)          reviews#index
                        POST   /books/:book_id/reviews(.:format)          reviews#create
