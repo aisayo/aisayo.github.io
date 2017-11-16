@@ -12,14 +12,14 @@ For my project, I created an application that allows a user to sign up or login,
 
 Lets first start with nested resources. According to the Ruby on Rails guides, nested resources are a hierarchy of routes that capture a parent and child model role. In the instance of a book review, we have two separate objects: a Book and a Review. The Review belongs to the Book, and the Book has many reviews. In a nested resource route, this would be built out like so: 
 
-**resources :books do
+resources :books do
     resources :reviews
-  end
+ end
 	
 
 The indentation here shows the relationship between the parent and child. You can then access the routes that are provided to you by this nested resource via rake routes and you will find similarly the CRUD action routes are also built out, and the controller#action still depends on the Review controller, using rails magic of assumption and opinion that although Book is the parent, we are still attemping to build Reviews for the parent object. FYI, You can filter your routes by using the [only:] syntax in case there are any routes that are of no use to you. This provides a cleaner tree of routes and gets rid of anything unnecessary. 
 	
-**	book_reviews GET    /books/:book_id/reviews(.:format)          reviews#index
+book_reviews GET    /books/:book_id/reviews(.:format)          reviews#index
                        POST   /books/:book_id/reviews(.:format)          reviews#create
        new_book_review GET    /books/:book_id/reviews/new(.:format)      reviews#new
       edit_book_review GET    /books/:book_id/reviews/:id/edit(.:format) reviews#edit
@@ -27,7 +27,7 @@ The indentation here shows the relationship between the parent and child. You ca
 					 
 	Now that are routes are defined, a user can go to the book page, add a review and the association and relationship will be highlighted via the nested resource. Showing that the new review is for the book with id of 1. Like so: 
 	
-	**http://localhost:3000/books/1/reviews/new
+	http://localhost:3000/books/1/reviews/new
 	
 	We then go to our controller and define our actions:
 	
@@ -52,7 +52,7 @@ The indentation here shows the relationship between the parent and child. You ca
 All this is great, but why do we need all this? The form: 
 In our Views/Reviews/new form, we will access the information predefined in our controller and build our form like so:
 
- **<%= form_for [:book, @review]  do |book_review| %>
+ <%= form_for [:book, @review]  do |book_review| %>
 
       <%= render 'shared/error_messages', object: book_review.object %>
 
@@ -80,12 +80,12 @@ Next we will discuss nested forms:
 	
 	Next we look at our Book controller new and create actions. 
 	
-	**def new
+	def new
     @book = Book.new
     @book.reviews.build(params[:reviews_attributes])
   end
 
-  **def create
+  def create
     @book = Book.new(book_params)
     if @book.save
       redirect_to books_path(@book)
@@ -96,7 +96,7 @@ Next we will discuss nested forms:
 
 First we instantiate a new instance of Book, and store it in our @book instance variable. We then build what is going to be the nested form from the book instance variable by using the magic of association. A book has many reviews. @book.reviews. But wait... where did reviews_attributes come from and what does it mean. When building a nested form, the parent object must be able to accept the properties of the child form. This is done by defining a method in the parent object like so : 
 
-**accepts_nested_attributes_for :reviews
+accepts_nested_attributes_for :reviews
 
 This automatically creates a setter and getter that can simply be accessed by reviews_attributes. This is what will be used to build the form:
 
