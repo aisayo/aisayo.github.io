@@ -14,20 +14,20 @@ To begin with: What exactly is hoisting?
 *  When code is being hoisted, all declarations and functions are "moved" to the top of the current scope. The scope can vary from global to local scopes. While the term "moving" is used a lot when referring to hoisting, it is vital to understand that no code is physically being moved or altered. It is a behind-the-scenes action that is required to interpret and store  variables in memory. 
 *** IMPORTANT:**  While JS allows for a 2-in-1 process of initializing variables, hoisting does not interpret it that way.  It is important to understand that hoisting ONLY hoists declarations and not initializations. ***What does this mean?*** TO understand exactly what this means we will take a look at the difference between initialization vs declaration. 
 
-Initialization Example: 
+***Initialization Example: ***
  
- Var hoisting = 'Will this hoist?' 
+       Var hoisting = 'Will this hoist?' 
  
 *  During the compile phase, what hoisting will do to this code is separate it so that it is interpreted via the engine as the example below:
  
-Declaration Example:
+***Declaration Example:***
  
- Var hoisting;
+     Var hoisting;
  
- hoisting = "Will this hoist?' 
+     hoisting = "Will this hoist?' 
  
  
-So whats the big deal?
+***So whats the big deal?***
 
 To understand hoisting would mean becoming better at debugging any issues that a developer might come across involving undefined variables. Because declarations are interpreted before any code executions, this gives a developer an idea of what to look for if they come across undefined variables. The first question one could ask themselves is: "is the variable declared and initialized before a code is executed? An example below shows how this could be problematic:
 
