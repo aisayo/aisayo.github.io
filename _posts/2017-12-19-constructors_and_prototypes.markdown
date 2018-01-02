@@ -33,25 +33,25 @@ To understand hoisting would mean becoming better at debugging any issues that a
 
 Lets say we have a function that contains variables within its scope:
 
-function hoistAway() {
+   function hoistAway() {
 
-   console.log(hoist)
+      console.log(hoist)
 
-   var hoist = 'will this hoist?'
+      var hoist = 'will this hoist?'
 
-};
+   };
 
 Some might look at this and say, well  JS will do what it needs to do in the background, so of course the value of 'hoist' will be displayed in the console. However if you're thinking this (much like I did before understanding hoisting) then you are just a little off. Here what is happening is we are logging the value of an undefined variable --> then initializing the variable. When JS interprets this code, what it will see is:
 
-function hoistAway() {
+   function hoistAway() {
 
-    var hoist;
+       var hoist;
 
-   console.log(hoist)
+      console.log(hoist)
 
-    hoist = 'will this hoist?'
+       hoist = 'will this hoist?'
 
-};
+   };
 
 
 The problem here is that we are telling the program to execute the console.log(hoist) with an undefined variable. Or better yet, we are declaring and defining the variable AFTER we tell it to perform some code. When the code is being compiled, hoisting does its magic and "moves" the declaration at the top of the scope, before the execution code, creating in human terms, an empty variable. It isn't until later in code that we give the variable a definition. While JS has a lot of magic within it, it still lacks predictablity and creating code this way, would be asking of it to predict that 'hoist' is in fact defined. 
@@ -60,27 +60,27 @@ The right way??
 
 The convention would be to always declare and initialize any variables before any code execution. Referring to our example above, the accurate way to create and execute this function with the appropriate values would be:
 
-function hoistAway() {
+   function hoistAway() {
 
- var hoist = 'will this hoist?'
+      var hoist = 'will this hoist?'
 ​
-   console.log(hoist)
+      console.log(hoist)
 ​
 ​
-};
+   };
 
 
 This will then be interpreted as:
 
-function hoistAway() {
+   function hoistAway() {
 ​
- var hoist;
- 
- hoist =  'will this hoist?'
+     var hoist;
+  
+    hoist =  'will this hoist?'
 
- console.log(hoist)
+    console.log(hoist)
 
-};
+  };
 
 our hoist variable is declared and defined before our execution code. 
 ​
