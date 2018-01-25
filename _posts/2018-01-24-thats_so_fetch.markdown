@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "That's So Fetch"
-date:       2018-01-25 01:28:11 +0000
+date:       2018-01-24 20:28:12 -0500
 permalink:  thats_so_fetch
 ---
 
