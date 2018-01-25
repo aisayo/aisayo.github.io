@@ -40,7 +40,7 @@ Once the promise has been resolved and parse, we arrive at our data.
 
 This is where I failed completely to understand the process and what is being passed on along the process. During my assessment, I was told to console.log the data. Unknowingly, I attempted to console.log the response. What I found out in my console was that, true it held the value of the data, but it was not the data itself. The response is the promise. In order to access the data in your console, you would have to, well... console.log the data. 
 
-```.then(console.log( data = >() )```
+```.then( data = >console.log(data) )```
 
 
 
