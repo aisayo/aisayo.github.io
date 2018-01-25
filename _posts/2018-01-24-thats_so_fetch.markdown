@@ -48,12 +48,12 @@ This is where I failed completely to understand the process and what is being pa
 A final code for a call to the API would entirely depend on your need. But an example of my call to the API to fetch the data  of all the books in my database, this is what it would look like:
 
 ```export function fetchBooks() {
-  return (dispatch) => {
-    return fetch('http://localhost:3000/api/books')
-      .then(res => res.json())
-      .then(data => dispatch({ type: 'FETCH_BOOKS', payload: data}))
-  }
+           return (dispatch) => {
+           return fetch('http://localhost:3000/api/books')
+           .then(res => res.json())
+           .then(data => dispatch({ type: 'FETCH_BOOKS', payload: data}))
+          }
 }```
 
 
-I hope this helps clear up the confusion for  you as much as it did for me.
+I hope this helps clear up the confusion for  you as much as it did for me. And after reading this, you can look at the code above and understand exactly what is happening. 
